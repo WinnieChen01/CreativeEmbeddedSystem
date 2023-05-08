@@ -1,10 +1,10 @@
 #include "FastLED.h"
 
-// Connect the port of the stepper motor driver and joystick
-int outPorts[] = {27, 26, 25, 33, 12, 13};
+// Connect the port of the stepper motor driver
+int outPorts[] = {27, 26, 25, 33};
 const int joyThreshold = 500;
-int joyX, joyY;
-int count = 0;
+// int joyX, joyY;
+// int count = 0;
 
 //defines pins numbers for distance sensor
 const int trigPin = 15;
@@ -98,38 +98,17 @@ void loop(){
     fill_solid(leds, NUM_LEDS, colors[current_color_index]);
     FastLED.show();
 
-  // If distance is less than 40cm, move stepper motor
-  // if (distance<40){
-  //   for (int i = 0; i < 3; i++) {
-  //     // Rotate left 60 degrees
-  //     move60Degrees(true, 3);
-  //     delay(100);
-
-  //     // Rotate right 60 degrees
-  //     move60Degrees(false, 3);
-  //     delay(100);
-  //   }
-
   }
-
-  // //left 60 degree and right 60 degree
-  // for (int i = 0; i < 3; i++) {
-  //   // Rotate left 60 degrees
-  //   move60Degrees(true, 5);
-  //   delay(100);
-
-  //   // Rotate right 60 degrees
-  //   move60Degrees(false, 5);
-  //   delay(100);
-  // }
 }
-//Suggestion: the motor turns precisely when the ms range is between 3 and 20
+
+//the motor turns precisely when the ms range is between 3 and 20
 void moveSteps(bool dir, int steps, byte ms) {
   for (unsigned long i = 0; i < steps; i++) {
     moveOneStep(dir); // Rotate a step
     delay(constrain(ms,3,20));        // Control the speed
   }
 }
+
 void moveOneStep(bool dir) {
   // Define a variable, use four low bit to indicate the state of port 
   static byte out = 0x01;
@@ -163,3 +142,4 @@ void moveAngle(bool dir, int angle, byte ms) {
 void move60Degrees(bool dir, byte ms) {
   moveAngle(dir, 60, ms);
 }
+
