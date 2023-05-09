@@ -9,11 +9,14 @@ Interacti Dog is my final project for the Creative Embedded System course in Spr
 
 ## Materials
 - ESP32 TTGO T-display 
+- breadboard
+- type C wire
 - a distance sensor
 - a stepper motor
 - a LED strip (WS2812B)
 - jumper wires
 - 1/4 basswood, clipboard
+- hot glue gun 
 
 ## Steps
 - Use jumper wires to connect all components 
