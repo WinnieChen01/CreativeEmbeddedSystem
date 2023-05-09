@@ -1,4 +1,4 @@
-# Module 2: Interactive Device
+# Interacti Dog
 ## Additional Links
 - blog: 
 - YouTube: 
